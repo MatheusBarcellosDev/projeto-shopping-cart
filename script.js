@@ -43,10 +43,10 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
-function createCartItemElement({ title: name, price: salePrice, thumbnail: image }) {
+function createCartItemElement({ id: sku, title: name, price: salePrice, thumbnail: image }) {
   const div = document.createElement('div');
   div.className = 'cart__item';
-  div.innerText = `${name} | R$${salePrice}\n`;
+  div.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: R$${salePrice}`;
   div.appendChild(createProductImageElement(image));
   div.appendChild(createCustomElement('span', 'cart__icone', 'X'));
   div.addEventListener('click', cartItemClickListener);
