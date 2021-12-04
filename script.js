@@ -11,10 +11,10 @@ async function sumPrice() {
     li.forEach((item) => {
       valor += Number.parseFloat(item.innerText.split('$')[1]);
     });
-    totalPrice.innerText = `Total: R$${valor}`;
+    totalPrice.innerText = `${valor}`;
   } else {
     valor = 0;
-    totalPrice.innerText = `Total: R$${valor}`;
+    totalPrice.innerText = `${valor}`;
   }
 }
 
@@ -42,7 +42,7 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
-function createCartItemElement({ id: sku, title: name, price: salePrice, thumbnail: image }) {
+function createCartItemElement({ id: sku, title: name, price: salePrice /* thumbnail: image */ }) {
   const div = document.createElement('div');
   div.className = 'cart__item';
   div.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
