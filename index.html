@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <script src="./helpers/fetchItem.js" defer></script>
     <script src="./helpers/fetchProducts.js" defer></script>
     <script src="./helpers/saveCartItems.js" defer></script>
@@ -13,12 +19,20 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <header>
+      <div class="logo">
+          <img src="./iconTrybe.png" alt="logo trybe" class="logoTrybe">
+          <h1 class="logoText">Trybe Store</h1>
+      </div>
+    </header>
     <section class="container">
+      <div class="loading"></div>
       <section class="items"></section>
       <section class="cart">
-        <span class="cart__title">Carrinho de compras</span>
+        <span class="cart__title">Meu carrinho<img class="icone" src="https://img.icons8.com/ios/50/26e07f/shopping-bag--v1.png"/></span>
+        <span class="cart__items"></span>
+        <span class="total-price"></span>
         <button class="empty-cart">Esvaziar carrinho</button>
-        <ol class="cart__items"></ol>
       </section>
     </section>
   </body>
