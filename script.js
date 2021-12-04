@@ -9,7 +9,7 @@ async function sumPrice() {
 
   if (prices) {
     li.forEach((item) => {
-      valor += Number.parseFloat(item.innerText.split('R$')[1]);
+      valor += Number.parseFloat(item.innerText.split('$')[1]);
     });
     totalPrice.innerText = `Total: R$${valor}`;
   } else {
@@ -19,8 +19,7 @@ async function sumPrice() {
 }
 
 function cartItemClickListener(event) {
-  const item = event.target.parentElement;
-  item.remove();
+  event.target.remove();
   saveCartItems(listProductsCart.innerHTML);
   sumPrice();
 }
@@ -46,9 +45,9 @@ function getSkuFromProductItem(item) {
 function createCartItemElement({ id: sku, title: name, price: salePrice, thumbnail: image }) {
   const div = document.createElement('div');
   div.className = 'cart__item';
-  div.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: R$${salePrice}`;
-  div.appendChild(createProductImageElement(image));
-  div.appendChild(createCustomElement('span', 'cart__icone', 'X'));
+  div.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+ /*  div.appendChild(createProductImageElement(image)); */
+  /* div.appendChild(createCustomElement('span', 'cart__icone', 'X')); */
   div.addEventListener('click', cartItemClickListener);
   return div;
 }
