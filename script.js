@@ -11,10 +11,10 @@ async function sumPrice() {
     li.forEach((item) => {
       valor += Number.parseFloat(item.innerText.split('R$')[1]);
     });
-    totalPrice.innerText = `Total: $${valor}`;
+    totalPrice.innerText = `Total: R$${valor}`;
   } else {
     valor = 0;
-    totalPrice.innerText = `Total: $${valor}`;
+    totalPrice.innerText = `Total: R$${valor}`;
   }
 }
 
